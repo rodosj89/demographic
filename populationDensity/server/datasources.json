@@ -1,0 +1,22 @@
+{
+  "db": {
+    "host": "ds039095.mlab.com:39095/density",
+    "port": 63053,
+    "url": "mongodb://admin:1q2w3e4r@ds039095.mlab.com:39095/density",
+    "database": "density",
+    "password": "1q2w3e4r",
+    "name": "db",
+    "user": "admin",
+    "connector": "mongodb"
+  },
+  "db_test": {
+    "host": "ds147354.mlab.com:47354/density_test",
+    "port": 47354,
+    "url": "mongodb://admin:1q2w3e4r@ds147354.mlab.com:47354/density_test",
+    "database": "density_test",
+    "password": "1q2w3e4r",
+    "name": "db_test",
+    "user": "admin",
+    "connector": "mongodb"
+  }
+}

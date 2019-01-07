@@ -1,0 +1,22 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<nav class="navbar navbar-dark bg-dark">
+        <button *ngIf="identity" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div *ngIf="identity" class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-top: 10px;" >
+          <ul class="navbar-nav mr-auto" >
+            <li class="nav-item active">
+              <button class="btn btn-outline-success my-2 my-sm-0" (click)="logout()" >Logout </button>
+            </li>
+          </ul>
+        </div>
+        <form class="form-inline my-2 my-lg-0" *ngIf="!identity" (ngSubmit)="login()" ngNativeValidate>
+          <input class="form-control mr-sm-2" #name="ngModel" name="email" [(ngModel)]="credentials.email" type="email" placeholder="email" aria-label="email" style="margin: 5px"  autocomplete="email" required>
+          <input class="form-control mr-sm-2" #name="ngModel" name="password" [(ngModel)]="credentials.password" type="password" placeholder="password" aria-label="password" style="margin: 5px"  autocomplete="current-password" required>
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+          <h4 *ngIf="errorLogin" style="color:red; padding-left: 15px; vertical-align: center">{{errorLogin}}</h4>
+        </form>
+    </nav>
+<router-outlet ></router-outlet>
+

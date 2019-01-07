@@ -1,0 +1,43 @@
+{
+  "name": "populationDensity",
+  "version": "1.0.0",
+  "main": "server/server.js",
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "start": "node .",
+    "build:sdk": "./node_modules/.bin/lb-sdk server/server.js ./client/src/app/shared/sdk",
+    "test": "export NODE_ENV=test; npm run unittest",
+    "unittest": "./node_modules/.bin/mocha --exit -t 10000 test/api/**/*-test.js"
+  },
+  "dependencies": {
+    "@mean-expert/loopback-sdk-builder": "^2.3.1",
+    "compression": "^1.0.3",
+    "cors": "^2.5.2",
+    "helmet": "^3.11.0",
+    "loopback": "^3.22.0",
+    "loopback-boot": "^2.6.5",
+    "loopback-component-explorer": "^6.0.0",
+    "loopback-connector-mongodb": "^3.9.2",
+    "serve-favicon": "^2.0.1",
+    "socket.io": "^2.2.0",
+    "strong-error-handler": "^2.0.0",
+    "lodash": "^3.10.1"
+  },
+  "devDependencies": {
+    "@loopback/testlab": "^1.0.3",
+    "eslint": "^3.17.1",
+    "eslint-config-loopback": "^8.0.0",
+    "mocha": "^5.2.0",
+    "chai": "^3.2.0",
+    "supertest": "^1.1.0"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "license": "UNLICENSED",
+  "description": "populationDensity"
+}

@@ -1,0 +1,12 @@
+{
+  "db": {
+    "host": "ds039095.mlab.com:39095/density",
+    "port": 63053,
+    "url": "mongodb://admin:1q2w3e4r@ds039095.mlab.com:39095/density",
+    "database": "density",
+    "password": "1q2w3e4r",
+    "name": "db",
+    "user": "admin",
+    "connector": "mongodb"
+  }
+}

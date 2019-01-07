@@ -1,0 +1,46 @@
+<div class="row" style="padding: 25px;" *ngIf="identity">
+<div style="text-align:center; padding-bottom: 30px">
+    <h3>
+        Population Density
+    </h3>
+    <ngx-charts-bar-vertical
+    (window:resize)="onResize($event)"
+    [view]="view"
+    [scheme]="colorScheme"
+    [results]="demographics"
+    [gradient]="gradient"
+    [xAxis]="showXAxis"
+    [yAxis]="showYAxis"
+    [legend]="showLegend"
+    [showXAxisLabel]="showXAxisLabel"
+    [showYAxisLabel]="showYAxisLabel"
+    [xAxisLabel]="xAxisLabel"
+    [yAxisLabel]="yAxisLabel"
+    [animations]="animations"
+    (select)="onSelect($event)">
+    </ngx-charts-bar-vertical>
+</div>
+<div class="center">
+    <h2>New Demographic</h2>
+    <form #empleadoRegisterForm="ngForm" (ngSubmit)="onSubmit()" class="card" style="padding: 30px;" ngNativeValidate>
+		<div class="row">
+            <div class="col-xl-6 col-sm-6 col-12" style="padding-bottom: 15px;">
+                    <label>Country: </label>
+                    <select class="form-control" [(ngModel)]="countrySelected" name="countries" (ngModelChange)="setNameCountries($event)" required>
+                        <option *ngFor="let country of countries" [value]="country.name">{{country.name.toUpperCase()}}</option>
+                    </select>
+                </div>
+			<div class="col-xl-6 col-sm-6 col-12" style="padding-bottom: 15px;">
+				<label>Population: </label>
+				<input type="number" #name="ngModel" name="population" [(ngModel)]="newDemographic.population" class="form-control" maxlength="12"  min="1" required />
+			</div>			
+        </div>
+        <p *ngIf="!countryValid" style="color:red">This country exists in the graph.</p>
+        <div class="col-12">
+            <button type="button" (click)="onCancel()" class="btn btn-danger col-5" style="margin: 4px">Cancel</button>
+            <button type="submit" class="btn btn-primary col-5" style="margin: 4px">Send</button>
+            
+        </div>
+	</form>
+</div>
+</div>
