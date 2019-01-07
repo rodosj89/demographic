@@ -1,10 +1,7 @@
 'use strict';
 
-var config = require('../config.js');
 var app = require('../../../server/server.js');
 
-var async = require('async');
-var lodash = require('lodash');
 var assert = require('chai').assert;
 var supertest = require('supertest');
 
